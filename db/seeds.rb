@@ -11,7 +11,8 @@ Restaurant.destroy_all
   Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.city,
-    stars: rand(1..5)
+    stars: rand(1..5),
+    chef_name: Faker::Name.name
   )
 
 end
