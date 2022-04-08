@@ -19,8 +19,18 @@
   <%= @restaurant.chef_name %>
 </p>
 
-
-
+</p>
+<p>
+  <strong>Review:</strong>
+  <% @restaurant.reviews.each do |r| %>
+    <p><%=r.content%></p>
+    <p><%= link_to "Remove",
+                  review_path(r),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </p>
+  <%end%>
+</p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

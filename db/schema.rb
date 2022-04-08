@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,24 +12,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_06_071057) do
-
-  create_table "restaurants", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.integer "stars"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "chef_name"
+ActiveRecord::Schema.define(version: 20_220_406_071_057) do
+  create_table 'restaurants', force: :cascade do |t|
+    t.string 'name'
+    t.string 'address'
+    t.integer 'stars'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'chef_name'
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.text "content"
-    t.integer "restaurant_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+  create_table 'reviews', force: :cascade do |t|
+    t.text 'content'
+    t.integer 'restaurant_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['restaurant_id'], name: 'index_reviews_on_restaurant_id'
   end
 
-  add_foreign_key "reviews", "restaurants"
+  add_foreign_key 'reviews', 'restaurants'
 end
